@@ -1,18 +1,26 @@
 import app from "./app.js";
 import 'dotenv/config'
-import conexao from "./src/model/conexao.js";
+import registagroConection from "./src/database/registagroConection.js"
+import agtConection from "./src/database/agtConection.js";
+import variaveis from "./src/config/variaveisGlobais.js"
 
 
-const port = process.env.PORT 
-const host = process.env.HOST
-
-conexao.connect(erro =>{
-    if(erro){
-        console.log(erro)
-    }else{
-        app.listen(port, () =>{
-            console.log(`Servidor: http://${host}:${port}`)
-        })
-
+registagroConection.connect(registagroError =>{
+    if(registagroError){
+        console.log("ERROR: RegistAgro error conection :(")
+        return
     }
+
+    agtConection.connect(agtError =>{
+        if(agtError){
+            console.log("ERROR: AGT error conection :(")
+            return
+        }
+        
+        app.listen(variaveis.server_port, () =>{
+            console.log(`Servidor: http://${variaveis.host}:${variaveis.server_port}`)
+        })
+        
+    })
+
 })
