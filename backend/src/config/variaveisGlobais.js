@@ -7,7 +7,8 @@ const variaveis = {
     database_port: process.env.DATABASE_PORT,
     database1: process.env.DATABASE1,
     database2: process.env.DATABASE2,
-    server_port: process.env.SERVER_PORT
+    server_port: process.env.SERVER_PORT,
+    jwt_key: process.env.SECRET_KEY
 }
 
 export default variaveis
