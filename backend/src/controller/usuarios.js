@@ -17,6 +17,40 @@ class UserController{
             res.status(500).json({error: error})
         }
     }
+
+    async inscreverEmpresas(req, res){
+        const dados = req.body
+        
+        try {
+            const companyData = await UserModel.inscreverEmpresas(dados)
+            
+            if(companyData.message){
+                res.status(201).json(companyData)
+            }else{
+                res.status(400).json(companyData)
+            }
+
+        } catch (error) {
+            res.status(500).json({error: error})
+        }
+    }
+
+    async login(req, res){
+        const dados = req.body
+
+        try {
+            const loginData = await UserModel.login(dados)
+            
+            if(loginData.error){
+                res.status(400).json(loginData.error)
+            }else{
+                res.set("Authorization", `Bearer ${loginData.token}`)
+                res.status(200).json(loginData.message)
+            }
+        } catch (error) {
+            res.status(500).json({error: error})
+        }
+    }
 }
 
 export default new UserController()
