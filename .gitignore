@@ -1,3 +1,6 @@
+# ==========================
+# 🧱 GRADLE / ANDROID
+# ==========================
 .gradle
 **/build/
 !**/src/**/build/
@@ -8,14 +11,63 @@ gradle-app.setting
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
-# Avoid ignore Gradle wrappper properties
+# Avoid ignoring Gradle wrapper properties
 !gradle-wrapper.properties
 
 # Cache of project
 .gradletasknamecache
 
 # Eclipse Gradle plugin generated files
-# Eclipse Core
 .project
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# Android Studio build artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# ==========================
+# 🐦 FLUTTER / DART / PUB
+# ==========================
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+
+# ==========================
+# ⚙️ IDE / EDITORS
+# ==========================
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VS Code
+#.vscode/
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
