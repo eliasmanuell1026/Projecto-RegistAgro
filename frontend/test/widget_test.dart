@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:projecto_registagro/main.dart';
-import 'package:projecto_registagro/pages/autentication_pages/main_page/index.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
