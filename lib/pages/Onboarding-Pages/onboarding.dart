@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:lottie/lottie.dart';
 import 'package:projecto_registagro/Models/onboardingLinst.dart';
 
 class Onboarding extends StatefulWidget {
