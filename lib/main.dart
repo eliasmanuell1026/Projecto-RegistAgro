@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projecto_registagro/pages/Autentications-Page/homeScreen/homescreen.dart';
 import 'pages/Onboarding-Pages/onboarding.dart';
+import 'package:page_transition/page_transition.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const Onboarding(),
+        "/homeScreen": (context) => Homescreen()
       },
     );
   }

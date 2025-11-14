@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:projecto_registagro/Models/onboardingLinst.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:projecto_registagro/pages/Autentications-Page/homeScreen/homescreen.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({super.key});
@@ -23,11 +25,21 @@ class _OnboardingState extends State<Onboarding> {
           fontWeight: FontWeight.bold,
         ),
         done: Text("Done", style: TextStyle(color: Color(0xFF61983D) ,fontWeight: FontWeight.w600, fontSize: 18)),
-        onDone: () {} ,
+        onDone: () {
+          Navigator.pushReplacement(
+            context,
+            PageTransition(
+              type: PageTransitionType.rightToLeft,
+              child: Homescreen(),
+              duration: Duration(milliseconds: 350)
+            ) 
+          
+          );
+        } ,
         dotsDecorator: DotsDecorator(
           size: const Size(10.0, 10.0),
           color: Colors.grey, 
-          activeSize: const Size(30.0, 10.0),
+          activeSize: const Size(25.20, 10.0),
           activeColor: Color(0xFF61983D),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0), // deixa a barra arredondada
@@ -45,7 +57,7 @@ class _OnboardingState extends State<Onboarding> {
                 Onboardinglist['title'] ?? "", 
                 style: TextStyle(
                   color: Color(0xFF61983D),
-                  fontSize: 25,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
                ),
@@ -63,7 +75,7 @@ class _OnboardingState extends State<Onboarding> {
                   borderRadius: BorderRadius.circular(15),
                   child: Image(
                     image: AssetImage(
-                      Onboardinglist["imagePath"] ?? "images/icone.png",
+                      Onboardinglist["imagePath"] ?? "assets/images/icone.png",
                     ),
                     height: 300.0,
                     width: 300.0,
